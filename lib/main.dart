@@ -4,5 +4,5 @@ import 'package:flutter/widgets.dart';
 import 'package:testing_in_flutter/app.dart';
 
 void main() {
-  runApp(AppThemeing());
+  runApp(const AppThemeing());
 }
