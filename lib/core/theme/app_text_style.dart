@@ -9,4 +9,18 @@ class AppTextStyle {
     color: Color(0xFF808080),
     fontFamily: AppFontFamily.manrope,
   );
+
+   static const TextStyle font18W400Gray = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w400,
+    color: Color(0xFF808080),
+    fontFamily: AppFontFamily.manrope,
+  );
+
+   static const TextStyle font14W400Gray = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: Color(0xFF808080),
+    fontFamily: AppFontFamily.manrope,
+  );
 }
