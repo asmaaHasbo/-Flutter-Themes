@@ -1,24 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:testing_in_flutter/core/theme/theme_modes/light_mode.dart';
+import 'package:testing_in_flutter/features/toggle_theme/toggle_theme_screen.dart';
 
 class AppThemeing extends StatelessWidget {
   const AppThemeing({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Doc App',
-
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
+    return  MaterialApp(
+      title: 'Theme App',
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Theming App'),
-        ),
-        body: const Center(
-          child: Text('Hello, Themed World!'),
-        ),)
+      theme: getLightModeTheme() ,
+      themeMode: ThemeMode.light,
+      home: const ToggleThemeScreen(),
     );
   }
 }
