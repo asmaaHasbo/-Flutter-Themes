@@ -2,27 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:testing_in_flutter/core/theme/app_colors.dart';
 import 'package:testing_in_flutter/core/theme/app_text_style.dart';
 
-ThemeData getLightModeTheme() {
+ThemeData getDarkModeTheme() {
   return ThemeData(
-    brightness: Brightness.light,
-    scaffoldBackgroundColor: Colors.white,
+    brightness: Brightness.dark,
+    scaffoldBackgroundColor: AppColors.darkModeColor,
 
     //=======================  الحاجات اللي مش بتاخد لون زي مثلا ال مسطره
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.mainColor,
-      brightness: Brightness.light,
+      brightness: Brightness.dark,
     ),
 
     //======================= app bar =======================
     appBarTheme: const AppBarTheme(
-      backgroundColor: Color.fromARGB(255, 217, 238, 218),
-      foregroundColor: Colors.black,
+      backgroundColor: AppColors.darkModeColor,
+      foregroundColor: Colors.white,
     ),
 
     //======================= text theme=======================
     textTheme: ThemeData.light().textTheme.apply(
-      bodyColor: Colors.black,
-      displayColor: Colors.black,
+      bodyColor: AppColors.gray400,
+      displayColor: const Color.fromARGB(255, 130, 16, 96),
     ),
 
     //======================= btns =======================
@@ -34,9 +34,14 @@ ThemeData getLightModeTheme() {
         foregroundColor: Colors.white,
 
         //================= onpressed  مفيش  معطل ====
-        disabledBackgroundColor: Colors.grey,
-        disabledForegroundColor: Colors.grey[300],
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        disabledBackgroundColor: AppColors.gray800,
+        disabledForegroundColor: AppColors.gray400,
+
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+
+          side: const BorderSide(color: AppColors.gray700),
+        ),
         textStyle: AppTextStyles.font16W4Gray400,
       ),
     ),
@@ -63,7 +68,10 @@ ThemeData getLightModeTheme() {
         borderSide: BorderSide(color: AppColors.mainColor),
         borderRadius: BorderRadius.all(Radius.circular(8)),
       ),
-      labelStyle: TextStyle(color: Colors.black45),
+      fillColor: AppColors.gray800,
+      filled: true,
+      labelStyle: AppTextStyles.font14W5white,
+      hintStyle: AppTextStyles.font16W4Gray400,
     ),
   );
 }
