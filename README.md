@@ -1,16 +1,16 @@
 # testing_in_flutter
 
 A new Flutter project.
+## 1- adding fonts in pubspec yaml done 
+![alt text](image.png)
 
-## Getting Started
+## 2- adding app text style 
 
-This project is a starting point for a Flutter application.
+## 3- adding app colors and app Shadows 
+![alt text](image-1.png)
 
-A few resources to get you started if this is your first Flutter project:
+## 4- adding light mode theme done
+![alt text](image-3.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 5- adding dark mode theme done
+![alt text](image-2.png)
