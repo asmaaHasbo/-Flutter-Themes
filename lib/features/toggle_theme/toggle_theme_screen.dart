@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:testing_in_flutter/core/theme/cubit/theme_cubit.dart';
 
 class ToggleThemeScreen extends StatelessWidget {
   const ToggleThemeScreen({super.key});
@@ -27,7 +29,15 @@ class ToggleThemeScreen extends StatelessWidget {
 
             const SizedBox(height: 20),
 
-            ElevatedButton(onPressed: () {}, child: const Text('Toggle Theme')),
+            ElevatedButton(
+              onPressed: () {
+                
+                context.read<ThemeCubit>().toggleTheme(
+                  Theme.of(context).brightness == Brightness.dark,
+                );
+              },
+              child: const Text('Toggle Theme'),
+            ),
           ],
         ),
       ),
