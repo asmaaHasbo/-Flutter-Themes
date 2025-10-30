@@ -11,8 +11,8 @@ class AppThemeing extends StatelessWidget {
     return MaterialApp(
       title: 'Theme App',
       debugShowCheckedModeBanner: false,
-      theme: getDarkModeTheme(),
-      themeMode: ThemeMode.dark,
+      theme: getLightModeTheme(),
+      themeMode: ThemeMode.light,
       home: const ToggleThemeScreen(),
     );
   }
