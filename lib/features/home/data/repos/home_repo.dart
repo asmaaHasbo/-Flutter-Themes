@@ -14,7 +14,7 @@ class HomeRepo {
   Future<ApiResult<List<MovieModel>>> getPopularMovies() async {
     try {
       final response = await homeApiService.getPopularMovies();
-      return ApiResult.success(response);
+      return ApiResult.success(response.results);
     } on DioException catch (e) {
       log('Dio error ${e.toString()}');
 

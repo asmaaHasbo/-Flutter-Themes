@@ -22,12 +22,12 @@ class _HomeApiService implements HomeApiService {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<MovieModel>> getPopularMovies() async {
+  Future<MovieResponse> getPopularMovies() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<MovieModel>>(
+    final _options = _setStreamType<MovieResponse>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -37,12 +37,10 @@ class _HomeApiService implements HomeApiService {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<MovieModel> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late MovieResponse _value;
     try {
-      _value = _result.data!
-          .map((dynamic i) => MovieModel.fromJson(i as Map<String, dynamic>))
-          .toList();
+      _value = MovieResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

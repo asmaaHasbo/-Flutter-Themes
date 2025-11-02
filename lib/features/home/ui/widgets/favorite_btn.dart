@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:testing_in_flutter/core/theme/app_colors.dart';
 
 class FavoriteButton extends StatefulWidget {
   const FavoriteButton({super.key});
@@ -20,10 +21,9 @@ class _FavoriteButtonState extends State<FavoriteButton> {
         });
       },
       child: Container(
-        margin: EdgeInsets.only(right: 16.w),
         child: Icon(
           isFavorite ? Icons.favorite : Icons.favorite_border,
-          color: const Color(0xFF4ECDC4),
+          color: AppColors.mainColor,
           size: 28.sp,
         ),
       ),

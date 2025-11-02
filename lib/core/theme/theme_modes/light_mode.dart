@@ -15,8 +15,9 @@ ThemeData getLightModeTheme() {
 
     //======================= app bar =======================
     appBarTheme: const AppBarTheme(
-      backgroundColor: Color.fromARGB(255, 217, 238, 218),
+      backgroundColor: Colors.white,
       foregroundColor: Colors.black,
+      titleTextStyle: AppTextStyles.font24W700darkBlack,
     ),
 
     //======================= text theme=======================
