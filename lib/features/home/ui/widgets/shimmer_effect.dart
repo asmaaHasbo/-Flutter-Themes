@@ -4,7 +4,9 @@ import 'package:redacted/redacted.dart';
 import 'package:testing_in_flutter/features/home/ui/widgets/movie_card.dart';
 
 class ShimmerEffect extends StatelessWidget {
-  const ShimmerEffect({super.key});
+  const ShimmerEffect({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,9 @@ class ShimmerEffect extends StatelessWidget {
             context: context,
             redact: true,
             configuration: RedactedConfiguration(
-              animationDuration: const Duration(milliseconds: 800), //default
+              animationDuration: const Duration(
+                milliseconds: 800,
+              ), //default
             ),
           );
         },
