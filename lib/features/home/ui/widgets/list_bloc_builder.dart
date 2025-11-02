@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:testing_in_flutter/features/home/logic/cubit/home_cubit.dart';
 import 'package:testing_in_flutter/features/home/ui/widgets/movies_list.dart';
+import 'package:testing_in_flutter/features/home/ui/widgets/shimmer_effect.dart';
 
 class ListBlocBuilder extends StatelessWidget {
   const ListBlocBuilder({super.key});
@@ -11,7 +12,7 @@ class ListBlocBuilder extends StatelessWidget {
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         if (state is HomePopularMoviesLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return const ShimmerEffect();
         } else if (state is HomePopularMoviesFailure) {
           return Center(
             child: Text(
@@ -21,9 +22,9 @@ class ListBlocBuilder extends StatelessWidget {
             ),
           );
         } else if (state is HomePopularMoviesSuccess) {
-          return  Expanded(child: MovieList(
-            MoviesList: state.popularMoviesList,
-          ));
+          return Expanded(
+            child: MovieList(MoviesList: state.popularMoviesList),
+          );
         }
 
         return const SizedBox.shrink();

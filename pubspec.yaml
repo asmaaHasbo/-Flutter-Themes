@@ -40,6 +40,9 @@ dependencies:
   get_it: ^8.2.0
 
   shared_preferences: ^2.5.3
+  
+  #A package that automatically generate a loading widget from your own widget.
+  redacted: ^1.0.13
 
 dev_dependencies:
   flutter_test:
