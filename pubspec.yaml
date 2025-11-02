@@ -11,18 +11,47 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.8
-  bloc: ^9.1.0
-  flutter_bloc: ^9.1.1
+
   hydrated_bloc: ^10.1.1
   path_provider: ^2.1.5
+
+  #A flutter plugin for adapting screen and font size.Guaranteed to look good on different models
+  flutter_screenutil: ^5.9.3
+
+
+
+  flutter_bloc: ^9.1.1
+  
+  cached_network_image: ^3.4.1
+  #networking package, supports Interceptors, Aborting and canceling a request,
+  dio: ^5.9.0
+  #retrofit.dart is an dio client generator using source_gen and inspired by Chopper and Retrofit.
+  retrofit: ^4.7.3
+
+  retrofit_generator: ^10.0.6
+
+  #network calls in a pretty, easy to read format.
+  pretty_dio_logger: ^1.4.0
+
+  #Annotations for the freezed code-generator. This package does nothing without freezed too.
+  freezed_annotation: ^3.1.0
+
+  #allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in your App"
+  get_it: ^8.2.0
+
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+     
+  #A build system for Dart code generation and modular compilation.c
+  build_runner: ^2.9.0
+ 
+  #Code generation for immutable classes that has a simple syntax/API without compromising on the features.
+  freezed: ^3.2.3
 
-  test: ^1.25.15
 
-  flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true

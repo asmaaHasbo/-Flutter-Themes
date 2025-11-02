@@ -14,9 +14,13 @@ ThemeData getDarkModeTheme() {
     ),
 
     //======================= app bar =======================
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
       backgroundColor: AppColors.darkModeColor,
       foregroundColor: Colors.white,
+      
+      titleTextStyle: AppTextStyles.font24W700darkBlack.copyWith(
+        color: Colors.white,
+      ),
     ),
 
     //======================= text theme=======================

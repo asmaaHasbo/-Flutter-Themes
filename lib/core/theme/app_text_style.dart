@@ -24,4 +24,13 @@ class AppTextStyles {
     color: Colors.white,
     fontFamily: AppFontFamily.manrope,
   );
+
+  static const TextStyle font24W700darkBlack = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w700,
+    color: Colors.black87,
+    fontFamily: AppFontFamily.manrope,
+  );
+
+
 }
