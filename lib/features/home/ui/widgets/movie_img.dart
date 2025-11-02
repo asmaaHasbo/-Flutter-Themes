@@ -10,8 +10,7 @@ class MovieImage extends StatelessWidget {
   final MovieModel? movieModel;
   @override
   Widget build(BuildContext context) {
-    String imgUrl =
-        'https://image.tmdb.org/t/p/w500/xR0IhVBjbNU34b8erhJCgRbjXo3.jpg';
+    String imgUrl = 'https://image.tmdb.org/t/p/w500/${movieModel?.posterPath}';
 
     return Container(
       width: 110.w,
@@ -30,7 +29,9 @@ class MovieImage extends StatelessWidget {
           fit: BoxFit.cover,
           errorBuilder: (context, error, stackTrace) {
             log('img error ${error.toString()}');
-            return const Center(child: Icon(Icons.image_not_supported, size: 40));
+            return const Center(
+              child: Icon(Icons.image_not_supported, size: 40),
+            );
           },
         ),
       ),
