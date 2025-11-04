@@ -6,6 +6,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:testing_in_flutter/app.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:testing_in_flutter/core/constant/app_constant.dart';
 import 'package:testing_in_flutter/core/di/dependency_injection.dart';
 import 'package:testing_in_flutter/features/home/data/model/movie_model.dart';
 
@@ -31,7 +32,7 @@ Future<void> main() async {
   Hive.registerAdapter(MovieModelAdapter());
   
   //  فتح الـ Box (اختياري - ممكن تفتحه في أي مكان)
-  await Hive.openBox<MovieModel>('cachedPopularMovies');
+  await Hive.openBox<MovieModel>(AppConstant.popularMoviesBox);
 
   //================== 
   runApp(const AppThemeing());
