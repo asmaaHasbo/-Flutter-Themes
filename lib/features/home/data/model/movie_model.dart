@@ -1,17 +1,50 @@
+import 'package:hive/hive.dart';
+
+// ✅ تحديد type adapter ID فريد (أي رقم من 0-223)
+part 'movie_model.g.dart';
+
+@HiveType(typeId: 0)
 class MovieModel {
+  @HiveField(0)
   final int id;
+
+  @HiveField(1)
   final String title;
+
+  @HiveField(2)
   final String originalTitle;
+
+  @HiveField(3)
   final String originalLanguage;
+
+  @HiveField(4)
   final String overview;
+
+  @HiveField(5)
   final String? posterPath;
+
+  @HiveField(6)
   final String? backdropPath;
+
+  @HiveField(7)
   final double popularity;
+
+  @HiveField(8)
   final String releaseDate;
+
+  @HiveField(9)
   final double voteAverage;
+
+  @HiveField(10)
   final int voteCount;
+
+  @HiveField(11)
   final bool adult;
+
+  @HiveField(12)
   final bool video;
+
+  @HiveField(13)
   final List<int> genreIds;
 
   MovieModel({
@@ -55,4 +88,3 @@ class MovieModel {
     return 'MovieModel(id: $id, title: $title, releaseDate: $releaseDate)';
   }
 }
-
