@@ -28,7 +28,7 @@ dependencies:
   #retrofit.dart is an dio client generator using source_gen and inspired by Chopper and Retrofit.
   retrofit: ^4.7.3
 
-  retrofit_generator: ^10.0.6
+  retrofit_generator: any
 
   #network calls in a pretty, easy to read format.
   pretty_dio_logger: ^1.4.0
@@ -43,19 +43,21 @@ dependencies:
   
   #A package that automatically generate a loading widget from your own widget.
   redacted: ^1.0.13
-
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  hive_generator: any
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
      
   #A build system for Dart code generation and modular compilation.c
-  build_runner: ^2.9.0
+  build_runner: any
  
   #Code generation for immutable classes that has a simple syntax/API without compromising on the features.
-  freezed: ^3.2.3
+  freezed: any
 
-
-
+ 
 flutter:
   uses-material-design: true
 
