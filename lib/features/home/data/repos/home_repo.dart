@@ -15,7 +15,6 @@ class HomeRepo {
   HomeLocalData homeLocalData = HomeLocalData();
 
   Future<ApiResult<List<MovieModel>>> getPopularMovies() async {
-    final storedMovies = homeLocalData.getCachedPopularMovies();
 
     try {
       final response = await homeApiService.getPopularMovies();
@@ -25,15 +24,20 @@ class HomeRepo {
       return ApiResult.success(response.results);
     } on DioException catch (e) {
       log('Dio error ${e.toString()}');
+    final storedMovies = homeLocalData.getCachedPopularMovies();
 
       if (storedMovies.isNotEmpty) {
-        homeLocalData.storePopularMovies(storedMovies);
+      return ApiResult.success(storedMovies);
+
       }
 
       return ApiResult.failure(handleDioException(e));
     } catch (e) {
+       final storedMovies = homeLocalData.getCachedPopularMovies();
+
       if (storedMovies.isNotEmpty) {
-        homeLocalData.storePopularMovies(storedMovies);
+      return ApiResult.success(storedMovies);
+
       }
       log('catch error ${e.toString()}');
       return ApiResult.failure(ErrorModel(message: e.toString()));
